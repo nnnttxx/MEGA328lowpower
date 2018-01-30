@@ -1,0 +1,79 @@
+menu.cpu=Processor
+
+##############################################################
+# Atmega with 8Mhz factory calibrated int. RC
+
+atmega328bb.name=ATmega328 (8 MHz int. RC)
+
+atmega328bb.upload.tool=arduino:avrdude
+atmega328bb.upload.protocol=arduino
+
+atmega328bb.bootloader.tool=arduino:avrdude
+atmega328bb.bootloader.unlock_bits=0x3F
+atmega328bb.bootloader.lock_bits=0x0F
+
+atmega328bb.build.board=AVR_UNO
+atmega328bb.build.core=arduino:arduino
+atmega328bb.build.variant=arduino:standard
+
+
+## Arduino Pro or Pro Mini (5V, 8 MHz int. RC) w/ ATmega328
+## -------------------------------------------------
+atmega328bb.menu.cpu.8MHzatmega328=ATmega328 (5V, 8 MHz int. RC)
+
+atmega328bb.menu.cpu.8MHzatmega328.upload.maximum_size=30720
+atmega328bb.menu.cpu.8MHzatmega328.upload.speed=57600
+
+# CKOUT enabled 
+# atmega328bb.menu.cpu.8MHzatmega328.bootloader.low_fuses=0xA2	 	    
+
+# E2 = 0b11100010
+atmega328bb.menu.cpu.8MHzatmega328.bootloader.low_fuses=0xE2	 	    
+atmega328bb.menu.cpu.8MHzatmega328.bootloader.high_fuses=0xDA	 	    
+atmega328bb.menu.cpu.8MHzatmega328.bootloader.extended_fuses=0x05 	
+atmega328bb.menu.cpu.8MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+atmega328bb.menu.cpu.8MHzatmega328.build.mcu=atmega328p
+atmega328bb.menu.cpu.8MHzatmega328.build.f_cpu=8000000L
+
+
+## Arduino Pro or Pro Mini (5V, 1MHz int. RC) w/ ATmega328
+## -------------------------------------------------
+atmega328bb.menu.cpu.1MHzatmega328=ATmega328 (5V, 1 MHz int. RC)
+
+atmega328bb.menu.cpu.1MHzatmega328.upload.maximum_size=30720
+atmega328bb.menu.cpu.1MHzatmega328.upload.maximum_data_size=2048
+atmega328bb.menu.cpu.1MHzatmega328.upload.speed=4800
+
+# DIV8 enabled, CKOUT enabled 
+# atmega328bb.menu.cpu.1MHzatmega328.bootloader.low_fuses=0x22
+		
+# 0x62 = 0b00100010, DIV8 enabled
+atmega328bb.menu.cpu.1MHzatmega328.bootloader.low_fuses=0x62		
+atmega328bb.menu.cpu.1MHzatmega328.bootloader.high_fuses=0xDA		
+atmega328bb.menu.cpu.1MHzatmega328.bootloader.extended_fuses=0x05	
+atmega328bb.menu.cpu.1MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_1MHz.hex
+
+atmega328bb.menu.cpu.1MHzatmega328.build.mcu=atmega328p
+atmega328bb.menu.cpu.1MHzatmega328.build.f_cpu=1000000L
+
+
+## Arduino Pro or Pro Mini (5V, 128 kHz int. RC) w/ ATmega328
+## -------------------------------------------------
+atmega328bb.menu.cpu.128kHzatmega328=ATmega328 (5V, 128 kHz int. RC)
+
+atmega328bb.menu.cpu.128kHzatmega328.upload.maximum_size=30720
+atmega328bb.menu.cpu.128kHzatmega328.upload.maximum_data_size=2048
+atmega328bb.menu.cpu.128kHzatmega328.upload.speed=1200
+
+# 128kHz RC enabled, CKOUT enabled
+# atmega328bb.menu.cpu.128kHzatmega328.bootloader.low_fuses=0xA3		
+
+# 0xE3 = 0b11100011, 128kHz RC enabled
+atmega328bb.menu.cpu.128kHzatmega328.bootloader.low_fuses=0xE3		
+atmega328bb.menu.cpu.128kHzatmega328.bootloader.high_fuses=0xDA		
+atmega328bb.menu.cpu.128kHzatmega328.bootloader.extended_fuses=0x05	
+atmega328bb.menu.cpu.128kHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_128kHz.hex
+
+atmega328bb.menu.cpu.128kHzatmega328.build.mcu=atmega328p
+atmega328bb.menu.cpu.128kHzatmega328.build.f_cpu=128000L
